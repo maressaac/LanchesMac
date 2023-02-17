@@ -18,7 +18,7 @@ public class Startup
         services.AddControllersWithViews();
     }
 
-    //This methodgets called by the run time. Use this method to configure...
+    //This methodgets called by the run time. Use this method to configure the HTTP request pipeline.
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
         if (env.IsDevelopment())
@@ -29,7 +29,7 @@ public class Startup
         else
         {
             app.UseExceptionHandler("/Home/Error");
-            // The deafault HSTS value is 30 days. You may want to change ...
+            // The deafault HSTS value is 30 days. You may want to change this for production scenary.
             app.UseHsts();
         }
 
