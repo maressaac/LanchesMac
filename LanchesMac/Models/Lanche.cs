@@ -18,13 +18,13 @@ namespace LanchesMac.Models
         [Display(Name = "Descrição do lanche")]
         [MinLength(20, ErrorMessage = "Descrição deve ter no mínimo {1} caracteres")]
         [MaxLength(200, ErrorMessage = "Descrição deve ter no máximo {1} caracteres")]
-        public string DecricaoCurta { get; set;}
+        public string DescricaoCurta { get; set;}
 
         [Required(ErrorMessage = "A descrição detalhada do lanche deve ser informada")]
         [Display(Name = "Descrição detalhada do lanche")]
         [MinLength(20, ErrorMessage = "Descrição detalhada deve ter no mínimo {1} caracteres")]
         [MaxLength(200, ErrorMessage = "Descrição detalhada deve ter no máximo {1} caracteres")]
-        public string DecricaoDetalhada { get; set;}
+        public string DescricaoDetalhada { get; set;}
 
         [Required(ErrorMessage = "Informe o preço do lanche")]
         [Display(Name = "Preço")]
