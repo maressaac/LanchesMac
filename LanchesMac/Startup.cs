@@ -4,6 +4,7 @@ using LanchesMac.Repositories;
 using LanchesMac.Repositories.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileSystemGlobbing.Internal.Patterns;
 using System;
 
 namespace LanchesMac;
@@ -40,7 +41,7 @@ public class Startup
         if (env.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();
-            
+
         }
         else
         {
@@ -60,9 +61,13 @@ public class Startup
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapControllerRoute(
+               name: "categoriaFiltro",
+               pattern: "Lanche/{action}/{categoria?}",
+               defaults: new { Controller = "Lanche", action = "List" });
+
+            endpoints.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
         });
     }
 }
-       
