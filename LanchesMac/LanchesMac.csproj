@@ -8,9 +8,16 @@
 
   <ItemGroup>
     <Content Remove="Views\Shared\Component.razor" />
+    <Content Remove="wwwroot\Images\magnifier.png" />
+    <Content Remove="wwwroot\Images\upload.png" />
+    <Content Remove="wwwroot\Images\visualizar.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FastReport.OpenSource" Version="2023.2.12" />
+    <PackageReference Include="FastReport.OpenSource.Data.MsSql" Version="2021.4.0" />
+    <PackageReference Include="FastReport.OpenSource.Export.PdfSimple" Version="2023.2.12" />
+    <PackageReference Include="FastReport.OpenSource.Web" Version="2023.2.12" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.3">
       <PrivateAssets>all</PrivateAssets>
@@ -24,6 +31,11 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
     <PackageReference Include="ReflectionIT.Mvc.Paging" Version="7.0.0" />
     <PackageReference Include="xunit.extensibility.core" Version="2.4.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Images\produtos\" />
+    <Folder Include="wwwroot\reports\" />
   </ItemGroup>
 
 </Project>

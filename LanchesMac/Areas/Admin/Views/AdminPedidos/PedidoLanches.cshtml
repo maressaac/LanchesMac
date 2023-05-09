@@ -1,42 +1,17 @@
-﻿@model LanchesMac.ViewModels.PedidoLancheViewModel
+﻿@model int
 
 @{
-    ViewData["Title"] = "PedidoLanches";
-    decimal totalPedido = 0;
+    ViewData["Title"] = "404 Not Found";
 }
 
-<h1>Lanches do Pedido</h1>
-<hr />
+<div class="alert alert-danger mt-1 mb-1">
+    <h1>Erro 404 - Not Found </h1>
+    <hr />
+    <h2>
+        Pedido com o id = @Model não foi encontrado 
+    </h2>
+</div>
 
-<h3>Pedido  :  @Html.DisplayFor(model => @Model.Pedido.PedidoId)</h3>
-<h3>Cliente :  @Html.DisplayFor(model => @Model.Pedido.Nome)</h3>
-<h3>Data    :  @Html.DisplayFor(model => @Model.Pedido.PedidoEnviado)</h3>
-<h3>Entrega :  @Html.DisplayFor(model => @Model.Pedido.PedidoEntregueEm)</h3>
-
-<table class="table">
-    @foreach (var item in @Model.Pedido.PedidoItens)
-    {
-        totalPedido += (@item.Lanche.Preco * @item.Quantidade);
-        <tr>
-            <td align="right">
-                <h3>@Html.DisplayFor(modelItem => item.Lanche.Nome)</h3>
-            </td>
-            <td align="right">
-                <img src="@item.Lanche.ImagemUrl" class="img-fluid" height="100" width="100">
-            </td>
-            <td align="right">
-                <h3>@string.Format("{0:C}", item.Lanche.Preco)</h3>
-            </td>
-            <td align="right">
-                <h3>(@Html.DisplayFor(modelItem => item.Quantidade))</h3>
-            </td>
-        </tr>
-    }
-    <tr>
-            <td colspan="2">&nbsp;</td>
-            <td align="right">
-                <h3>Total do Pedido : @string.Format("{0:C}", @totalPedido)</h3>
-            </td>
-    </tr>
-</table>
-<a asp-action="Index" class="btn btn-outline-info">Retornar</a>
+<a asp-action="Index" asp-controller="AdminPedidos" class="btn btn-outline-success">
+    <h2>Retornar para a lista de Pedidos</h2>
+</a>
